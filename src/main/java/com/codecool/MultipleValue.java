@@ -1,5 +1,12 @@
 package com.codecool;
 
-public class MultipleValue extends Value {
+import java.util.List;
 
+public class MultipleValue extends Value {
+    List<String> params;
+    
+    public MultipleValue(List<String> params, Boolean selectionType) {
+        this.inputPattern = params;
+        this.selectionType = selectionType;
+    }
 }
