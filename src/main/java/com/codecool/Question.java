@@ -22,4 +22,10 @@ public class Question {
     public Answer getAnswer() {
         return answer;
     }
+    
+    public Boolean getEvaluatedAnswer(String input) {
+        boolean evaluation = this.answer.evaluateAnswerByInput(input);
+        
+        return evaluation;
+    }
 }
