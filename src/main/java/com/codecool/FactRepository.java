@@ -3,13 +3,11 @@ package com.codecool;
 import java.util.Iterator;
 import java.util.List;
 
-
-
 public class FactRepository {
     private List<Fact> facts;
     private Iterator<Fact> factIterator;
     
-    public FactRepository(List facts, Iterator factIterator) {
+    public FactRepository() {
         this.facts = facts;
         this.factIterator = factIterator;
     }

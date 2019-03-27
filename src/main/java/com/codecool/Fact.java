@@ -19,4 +19,16 @@ public class Fact {
     public Set<String> getIdSet() {
         return this.evaluation.keySet();
     }
+    
+    public void setFactValueById(String id, Boolean value) {
+        this.evaluation.put(id, value);
+    }
+    
+    public Boolean getValueById(String id) {
+        return this.evaluation.get(id);
+    }
+    
+    private String getDescription() {
+        return this.description;
+    }
 }
