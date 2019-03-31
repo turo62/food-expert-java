@@ -1,26 +1,24 @@
 package com.codecool;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
+import java.util.*;
 
 public class Answer {
-    private List<Value> answers;
+    private Map<Boolean, List<String>> answer;
     
     public Answer() {
-        this.answers = new ArrayList<>();
+        this.answer = new HashMap<>();
     }
     
     public void addValue(Value value) {
-        this.answers.add(value);
+        this.answer.put(value.getSelectionType(), value.getInputPattern());
     }
     
-    public Boolean evaluateAnswerByInput(String input) throws InputMismatchException {
-        for (Value value : this.answers) {
+    /*public Boolean evaluateAnswerByInput(String input) throws InputMismatchException {
+        for (Value value : this.answer) {
             if (value.getInputPattern().contains(input)) {
                 return value.getSelectionType();
             }
         }
-        throw new InputMismatchException();
-    }
+        throw new InputMismatchException()
+    }*/
 }
