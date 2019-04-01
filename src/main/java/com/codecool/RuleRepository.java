@@ -1,29 +1,26 @@
 package com.codecool;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class RuleRepository {
-    private String id;
-    private Map<String, String> ruleRepository;
-    private Iterator questionIterator;
-    private Question question;
+    
     private List<Question> questions;
+    private Iterator<Question> questionIterator;
     
     public RuleRepository() {
-        this.ruleRepository = new HashMap<>();
+        this.questionIterator = new QuestionIterator();
+        this.questions = new ArrayList<>();
     }
     
     public void addQuestion(Question question) {
-        this.ruleRepository.put(question.getId(), question.getQuestion());
+        this.questions.add(question);
     }
     
     public Iterator<Question> getIterator() {
         return questionIterator;
     }
-    
-    /*public void addQuestion(Question question) {
-        questions.add(question);
-    }*/
     
     private class QuestionIterator implements Iterator {
         int index = 0;

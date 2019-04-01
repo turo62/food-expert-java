@@ -9,8 +9,4 @@ public class MultipleValue extends Value {
         this.inputPattern = params;
         this.selectionType = selectionType;
     }
-    
-    public List<String> getParams() {
-        return params;
-    }
 }

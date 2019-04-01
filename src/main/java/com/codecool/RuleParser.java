@@ -55,28 +55,13 @@ public class RuleParser extends XMLParser {
                             if (n3.getNodeType() == n3.ELEMENT_NODE) {
                                 Element r3 = (Element) n3;
                                 Boolean st = (Boolean.valueOf(r3.getAttribute("value"))).booleanValue();
-                                System.out.println(st);
                                 
                                 for (int l = 0; l < r3.getElementsByTagName("SingleValue").getLength(); l++) {
                                     Node n4 = r3.getElementsByTagName("SingleValue").item(l);
                                     if (n4.getNodeType() == n4.ELEMENT_NODE) {
                                         Element r4 = (Element) n4;
                                         String inp = r4.getAttribute("value");
-                                        System.out.println(inp);
-                                        List<String> myIP = new ArrayList<>();
-                                        myIP.add(inp);
-                                        Value tempValue = new Value() {
-                                            @Override
-                                            public void setSelectionType(Boolean st) {
-                                                super.setSelectionType(st);
-                                            }
-                                            
-                                            @Override
-                                            public void setInputPattern(List myIP) {
-                                                super.setInputPattern(myIP);
-                                            }
-                                        };
-                                        
+                                        Value tempValue = new SingleValue(inp, st);
                                         myAnswer.addValue(tempValue);
                                     }
                                     
@@ -94,24 +79,18 @@ public class RuleParser extends XMLParser {
                                         for (int m = 0; m < count; m++) {
                                             params.add(param[m]);
                                         }
-                                        
-                                        for (int p = 0; p < params.size(); p++) {
-                                            System.out.println(params.get(p));
-                                        }
                                     }
                                     
                                     Value tempValue = new MultipleValue(params, st);
                                     myAnswer.addValue(tempValue);
-                                    int q = tempValue.getInputPattern().size();
-                                    System.out.println(tempValue.getInputPattern());
                                 }
                             }
                         }
                     }
+                    Question question = new Question(id, myQuestion, myAnswer);
+                    RuleRepository ruleRepository = new RuleRepository();
+                    ruleRepository.addQuestion(question);
                 }
-                Question question = new Question(id, myQuestion, myAnswer);
-                RuleRepository ruleRepository = new RuleRepository();
-                ruleRepository.addQuestion(question);
             }
         }
         return ruleRepository;

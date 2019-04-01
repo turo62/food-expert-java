@@ -23,9 +23,9 @@ public class Question {
         return answer;
     }
     
-    /*public Boolean getEvaluatedAnswer(String input) {
-        boolean evaluation = this.answer.evaluateAnswerByInput(input);
+    public Boolean getEvaluatedAnswer(String input) {
+        Boolean evaluation = this.answer.evaluateAnswerByInput(input);
         
         return evaluation;
-    }*/
+    }
 }

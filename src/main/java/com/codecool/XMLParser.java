@@ -18,8 +18,8 @@ abstract class XMLParser {
             InputStream is = new FileInputStream(xmlPath);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            Document d = db.parse(is);
-            Element root = d.getDocumentElement();
+            this.d = db.parse(is);
+            this.d.getDocumentElement().normalize();
         } catch (Exception e) {
             e.printStackTrace();
         }

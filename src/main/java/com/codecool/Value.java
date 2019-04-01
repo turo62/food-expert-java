@@ -11,13 +11,6 @@ public abstract class Value {
         this.selectionType = selectionType;
     }
     
-    public void setSelectionType(Boolean type) {
-        this.selectionType = type;
-    }
-    
-    public void setInputPattern(List inputPattern) {
-        this.inputPattern = inputPattern;
-    }
     public List<String> getInputPattern() {
         return this.inputPattern;
     }

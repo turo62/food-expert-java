@@ -3,22 +3,22 @@ package com.codecool;
 import java.util.*;
 
 public class Answer {
-    private Map<Boolean, List<String>> answer;
+    private List<Value> answer;
     
     public Answer() {
-        this.answer = new HashMap<>();
+        this.answer = new ArrayList<>();
     }
     
     public void addValue(Value value) {
-        this.answer.put(value.getSelectionType(), value.getInputPattern());
+        this.answer.add(value);
     }
     
-    /*public Boolean evaluateAnswerByInput(String input) throws InputMismatchException {
+    public Boolean evaluateAnswerByInput(String input) throws InputMismatchException {
         for (Value value : this.answer) {
             if (value.getInputPattern().contains(input)) {
                 return value.getSelectionType();
             }
         }
-        throw new InputMismatchException()
-    }*/
+        throw new InputMismatchException();
+    }
 }
