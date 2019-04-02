@@ -6,16 +6,11 @@ public abstract class Value {
     List<String> inputPattern;
     boolean selectionType;
     
-    public Value() {
-        this.inputPattern = inputPattern;
-        this.selectionType = selectionType;
-    }
-    
     public List<String> getInputPattern() {
         return this.inputPattern;
     }
     
-    public Boolean getSelectionType() {
+    public boolean getSelectionType() {
         return this.selectionType;
     }
 }

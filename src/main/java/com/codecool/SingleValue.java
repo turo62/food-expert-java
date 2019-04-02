@@ -1,13 +1,17 @@
 package com.codecool;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SingleValue extends Value {
-    private String param;
+    private List<String> param;
     
-    public SingleValue(String param, Boolean selectionType) {
-        this.inputPattern = new ArrayList<>();
-        this.inputPattern.add(param);
+    public SingleValue(List param, boolean selectionType) {
+        this.inputPattern = param;
         this.selectionType = selectionType;
+    }
+    
+    public List<String> getParam() {
+        return param;
     }
 }
