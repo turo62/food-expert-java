@@ -12,7 +12,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        FactParser myFacts = new FactParser("Facts.xml");
         RuleParser myParser = new RuleParser("Rules.xml");
-            myParser.getRuleRepository();
+        myParser.getRuleRepository();
+        myFacts.getFactRepository();
     }
 }

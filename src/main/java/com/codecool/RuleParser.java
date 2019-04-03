@@ -61,9 +61,6 @@ public class RuleParser extends XMLParser {
                                         String inp = r4.getAttribute("value");
                                         input.add(inp);
                                         Value tempValue = new SingleValue(input, st);
-                                        for (int v = 0; v < input.size(); v++) {
-                                            System.out.println(input.get(v));
-                                        }
                                         myAnswer.addValue(tempValue);
                                     }
                                 }
@@ -83,11 +80,6 @@ public class RuleParser extends XMLParser {
                                     }
                                     
                                     Value tempValue = new MultipleValue(params, st);
-                                    System.out.println(tempValue.getSelectionType());
-    
-                                    for (int u = 0; u < tempValue.getInputPattern().size(); u++) {
-                                        System.out.println(tempValue.getInputPattern().get(u));
-                                    }
                                     myAnswer.addValue(tempValue);
                                 }
     
