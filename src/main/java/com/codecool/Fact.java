@@ -16,6 +16,10 @@ public class Fact {
         this.evaluation = new HashMap<>();
     }
     
+    public String getId() {
+        return this.id;
+    }
+    
     public Set<String> getIdSet() {
         return this.evaluation.keySet();
     }
@@ -28,7 +32,11 @@ public class Fact {
         return this.evaluation.get(id);
     }
     
-    private String getDescription() {
+    public String getDescription() {
         return this.description;
+    }
+    
+    public Map getEvaluation() {
+        return this.evaluation;
     }
 }

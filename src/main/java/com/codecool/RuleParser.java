@@ -38,6 +38,8 @@ public class RuleParser extends XMLParser {
                 String id = r.getAttribute("id");
                 String myQuestion = r.getElementsByTagName("Question").item(0).getTextContent();
                 Answer myAnswer = new Answer();
+                //List<Value> answers = new ArrayList<>();
+                Value tempValue = null;
     
                 for (int j = 0; j < r.getElementsByTagName("Answer").getLength(); j++) {
                     Node n2 = r.getElementsByTagName("Answer").item(j);
@@ -52,7 +54,6 @@ public class RuleParser extends XMLParser {
     
                                 Boolean st = (Boolean.valueOf(r3.getAttribute("value"))).booleanValue();
     
-    
                                 for (int l = 0; l < r3.getElementsByTagName("SingleValue").getLength(); l++) {
                                     Node n4 = r3.getElementsByTagName("SingleValue").item(l);
                                     if (n4.getNodeType() == n4.ELEMENT_NODE) {
@@ -60,8 +61,7 @@ public class RuleParser extends XMLParser {
                                         Element r4 = (Element) n4;
                                         String inp = r4.getAttribute("value");
                                         input.add(inp);
-                                        Value tempValue = new SingleValue(input, st);
-                                        myAnswer.addValue(tempValue);
+                                        tempValue = new SingleValue(input, st);
                                     }
                                 }
                                 
@@ -78,10 +78,10 @@ public class RuleParser extends XMLParser {
                                             params.add(param[m]);
                                         }
                                     }
-                                    
-                                    Value tempValue = new MultipleValue(params, st);
-                                    myAnswer.addValue(tempValue);
+    
+                                    tempValue = new MultipleValue(params, st);
                                 }
+                                myAnswer.addValue(tempValue);
     
                             }
                         }
@@ -89,6 +89,9 @@ public class RuleParser extends XMLParser {
                 }
                 Question question = new Question(id, myQuestion, myAnswer);
     
+                for (int o = 0; o < myAnswer.getAnswers().size(); o++) {
+                    System.out.println(myAnswer.getAnswers().get(o).getSelectionType());
+                }
                 RuleRepository ruleRepository = new RuleRepository();
                 ruleRepository.addQuestion(question);
             }

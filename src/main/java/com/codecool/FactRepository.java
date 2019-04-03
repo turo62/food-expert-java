@@ -21,7 +21,7 @@ public class FactRepository {
     }
     
     private class Factiterator implements Iterator {
-        int index = 0;
+        int index;
         
         @Override
         public boolean hasNext() {

@@ -30,6 +30,8 @@ public class FactParser extends XMLParser {
     }
     
     public FactRepository getFactRepository() {
+        Fact fact;
+        List<Fact> facts;
     
         for (int i = 0; i < nL.getLength(); i++) {
             Node n1 = nL.item(i);
@@ -38,10 +40,8 @@ public class FactParser extends XMLParser {
             String id = e1.getAttribute("id");
             Element e4 = (Element) e1.getElementsByTagName("Description").item(0);
             String description = e4.getAttribute("value");
-            System.out.println(id);
-            System.out.println(description);
-        
-            Fact fact = new Fact(id, description);
+    
+            fact = new Fact(id, description);
         
             Element e2 = (Element) e1.getElementsByTagName("Evals").item(0);
             NodeList nL1 = e2.getElementsByTagName("Eval");
@@ -51,12 +51,9 @@ public class FactParser extends XMLParser {
                 String id1 = e3.getAttribute("id");
                 String value = e3.getTextContent();
                 fact.setFactValueById(id1, Boolean.valueOf(value));
-                System.out.println(id1);
-                System.out.println(value);
             }
-        
-            /*this.factRepository.addFact(fact);*/
-        
+    
+            /*factRepository.addFact(fact);*/
         }
         return factRepository;
     }

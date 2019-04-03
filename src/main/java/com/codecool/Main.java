@@ -14,6 +14,8 @@ public class Main {
     public static void main(String[] args) {
         FactParser myFacts = new FactParser("Facts.xml");
         RuleParser myParser = new RuleParser("Rules.xml");
+        Printing printing = new Printing();
+        printing.printWelcome();
         myParser.getRuleRepository();
         myFacts.getFactRepository();
     }

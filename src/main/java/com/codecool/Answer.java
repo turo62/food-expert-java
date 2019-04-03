@@ -21,4 +21,8 @@ public class Answer {
         }
         throw new InputMismatchException();
     }
+    
+    public List<Value> getAnswers() {
+        return answers;
+    }
 }
