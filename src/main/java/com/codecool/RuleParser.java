@@ -64,7 +64,7 @@ public class RuleParser extends XMLParser {
                                         for (int v = 0; v < input.size(); v++) {
                                             System.out.println(input.get(v));
                                         }
-                                        myAnswer = myAnswer.addValue(tempValue);
+                                        myAnswer.addValue(tempValue);
                                     }
                                 }
                                 
@@ -88,7 +88,7 @@ public class RuleParser extends XMLParser {
                                     for (int u = 0; u < tempValue.getInputPattern().size(); u++) {
                                         System.out.println(tempValue.getInputPattern().get(u));
                                     }
-                                    myAnswer = myAnswer.addValue(tempValue);
+                                    myAnswer.addValue(tempValue);
                                 }
     
                             }
@@ -103,15 +103,4 @@ public class RuleParser extends XMLParser {
         }
         return ruleRepository;
     }
-    
-    /*public void tryRules() {
-        ruleRepository = getRuleRepository();
-        Iterator<Question> questionIterator = ruleRepository.getIterator();
-        
-        while (questionIterator.hasNext()) {
-            Question question = questionIterator.next();
-            String questionId = question.getId();
-            System.out.println(questionId);
-        }
-    }*/
 }

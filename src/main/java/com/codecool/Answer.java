@@ -9,8 +9,8 @@ public class Answer {
         this.answers = new ArrayList<>();
     }
     
-    public Answer addValue(Value value) {
-        return answers.add(value);
+    public void addValue(Value value) {
+        answers.add(value);
     }
     
     public Boolean evaluateAnswerByInput(String input) throws InputMismatchException {
