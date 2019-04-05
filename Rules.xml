@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules>
-    <Rule id="experience">
-        <Question>Have you ever walked in the mountains?</Question>
+    <Rule id="mealtype">
+        <Question>What meal would you like?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="breakfast, dinner, lunch"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="cake, sweet, confectionary"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="foodstyle">
+        <Question>What style of food do you prefer?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="fast food, street food, junk food, fast, street"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="quality,fine dining, restaurant"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="foodtype1">
+        <Question>Do you like Italian food?</Question>
         <Answer>
             <Selection value="true">
                 <SingleValue value="yes"/>
@@ -11,30 +33,8 @@
             </Selection>
         </Answer>
     </Rule>
-    <Rule id="season">
-        <Question>What is the time of the year?</Question>
-        <Answer>
-            <Selection value="true">
-                <MultipleValue value="spring,summer,autumn"/>
-            </Selection>
-            <Selection value="false">
-                <SingleValue value="winter"/>
-            </Selection>
-        </Answer>
-    </Rule>
-    <Rule id="transport">
-        <Question>You are driving your own car or are you going by bus?</Question>
-        <Answer>
-            <Selection value="true">
-                <MultipleValue value="car,own car,my own car"/>
-            </Selection>
-            <Selection value="false">
-                <MultipleValue value="bus,by bus"/>
-            </Selection>
-        </Answer>
-    </Rule>
-    <Rule id="family">
-        <Question>Is this a family trip?</Question>
+    <Rule id="foodtype2">
+        <Question>Do you like hungarian food?</Question>
         <Answer>
             <Selection value="true">
                 <SingleValue value="yes"/>
@@ -44,8 +44,8 @@
             </Selection>
         </Answer>
     </Rule>
-    <Rule id="dog">
-        <Question>Are you taking your dog with you?</Question>
+    <Rule id="foodtype3">
+        <Question>Do you like fat food?</Question>
         <Answer>
             <Selection value="true">
                 <SingleValue value="yes"/>
@@ -55,14 +55,14 @@
             </Selection>
         </Answer>
     </Rule>
-    <Rule id="money">
-        <Question>Do you prefer this trip to be cheaper or more expensive?</Question>
+    <Rule id="price">
+        <Question>What price range do you prefer?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="cheap,cheaper"/>
+                <SingleValue value="cheap"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="expensive,more expensive"/>
+                <SingleValue value="expensive"/>
             </Selection>
         </Answer>
     </Rule>

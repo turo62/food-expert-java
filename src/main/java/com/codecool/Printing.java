@@ -8,9 +8,9 @@ public class Printing {
             "Please, reply some questions to let us know your preferences. ");
     }
     
-    /*public void printQuestion(Question question) {
-    
-    }*/
+    public void printQuestion(Question question) {
+        System.out.println(question.getQuestion() + "\n" + "\n");
+    }
     
     
 }

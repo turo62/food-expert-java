@@ -24,14 +24,13 @@ public class FactParser extends XMLParser {
     private NodeList nL;
     
     public FactParser(String xmlPath) {
-        loadXmlDocument("Facts.xml");
+        loadXmlDocument(xmlPath);
         this.factRepository = new FactRepository();
         this.nL = d.getElementsByTagName("Fact");
     }
     
     public FactRepository getFactRepository() {
         Fact fact;
-        List<Fact> facts;
     
         for (int i = 0; i < nL.getLength(); i++) {
             Node n1 = nL.item(i);
@@ -53,8 +52,8 @@ public class FactParser extends XMLParser {
                 fact.setFactValueById(id1, Boolean.valueOf(value));
             }
     
-            /*factRepository.addFact(fact);*/
+            factRepository.addFact(fact);
         }
-        return factRepository;
+        return this.factRepository;
     }
 }

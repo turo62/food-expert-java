@@ -12,11 +12,25 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        FactParser myFacts = new FactParser("Facts.xml");
-        RuleParser myParser = new RuleParser("Rules.xml");
-        Printing printing = new Printing();
-        printing.printWelcome();
-        myParser.getRuleRepository();
-        myFacts.getFactRepository();
+        final String FACTSROOT = "Facts.xml";
+        final String RULESROOT = "Rules.xml";
+        ESProvider myESP = new ESProvider(new FactParser(FACTSROOT), new RuleParser(RULESROOT));
+        //Printing printing = new Printing();
+        //printing.printWelcome();
+    
+        myESP.collectAnswers();
+        //FactParser myFacts = new FactParser(FACTSROOT);
+        //myFacts.getFactRepository();
+        //getAnswers();
     }
+    
+    /*public static void getAnswers() {
+        Iterator<Fact> factIterator = new FactRepository().getIterator();
+        
+        while (factIterator.hasNext()) {
+            Fact myFact = factIterator.next();
+            System.out.println(myFact.getId());
+        }
+        
+    }*/
 }

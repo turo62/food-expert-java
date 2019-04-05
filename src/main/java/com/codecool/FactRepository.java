@@ -1,15 +1,17 @@
 package com.codecool;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class FactRepository {
     private List<Fact> facts;
     private Iterator<Fact> factIterator;
     
     public FactRepository() {
-        this.facts = facts;
-        this.factIterator = factIterator;
+        this.facts = new ArrayList<>();
+        this.factIterator = new Factiterator();
     }
     
     public void addFact(Fact fact) {

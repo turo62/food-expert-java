@@ -24,12 +24,13 @@ public class RuleParser extends XMLParser {
     private NodeList nL;
     
     public RuleParser(String xmlPath) {
-        loadXmlDocument("Rules.xml");
+        loadXmlDocument(xmlPath);
         this.ruleRepository = new RuleRepository();
         this.nL = d.getElementsByTagName("Rule");
+        addRuleToRepository();
     }
     
-    public RuleRepository getRuleRepository() {
+    public void addRuleToRepository() {
         
         for (int i = 0; i < nL.getLength(); i++) {
             Node n = nL.item(i);
@@ -90,12 +91,14 @@ public class RuleParser extends XMLParser {
                 Question question = new Question(id, myQuestion, myAnswer);
     
                 for (int o = 0; o < myAnswer.getAnswers().size(); o++) {
-                    System.out.println(myAnswer.getAnswers().get(o).getSelectionType());
+                    System.out.println(myAnswer.getAnswers().get(o).getInputPattern());
                 }
-                RuleRepository ruleRepository = new RuleRepository();
                 ruleRepository.addQuestion(question);
             }
         }
-        return ruleRepository;
+    }
+    
+    public RuleRepository getRuleRepository() {
+        return this.ruleRepository;
     }
 }
