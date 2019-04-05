@@ -23,20 +23,17 @@ public class FactRepository {
     }
     
     private class Factiterator implements Iterator {
-        int index;
-        
-        @Override
+        private int index = 0;
         public boolean hasNext() {
-            return index < facts.size();
-        }
-        
-        @Override
-        public Fact next() {
-            if (this.hasNext()) {
-                return facts.get(index++);
-            } else {
-                return null;
+            if (index < facts.size()) {
+                index++;
+                return true;
             }
+            return false;
+        }
+    
+        public Fact next() {
+            return facts.get(index);
         }
     }
 }

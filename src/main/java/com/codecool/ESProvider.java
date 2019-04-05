@@ -9,8 +9,9 @@ public class ESProvider {
     Printing printing;
     private RuleRepository ruleRepository;
     private FactRepository factRepository;
-    private Map<String, String> userPreferences;
+    private Map<String, Boolean> userPreferences;
     private Fact fact;
+    private Question question;
     
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
         this.factRepository = factParser.getFactRepository();
@@ -26,14 +27,24 @@ public class ESProvider {
         while (questionIterator.hasNext()) {
             Question question = questionIterator.next();
             String questionId = question.getId();
-            /*for (int i = 0; i < question.getAnswer().getAnswers().size(); i++) {
-                Value value = question.getAnswer().getAnswers().get(i);
-                System.out.println(value.getSelectionType());
-            }*/
-            System.out.println("répa");
-            String userInput = getUserInput(input);
-            this.userPreferences.put(questionId, userInput);
+            System.out.println(question.getQuestion());
+            Boolean inputEval = getAnswerByQuestion(questionId, question, input);
+            this.userPreferences.put(questionId, inputEval);
         }
+        input.close();
+    
+        for (int p = 0; p < userPreferences.size(); p++) {
+            Object key = userPreferences.keySet().toArray()[p];
+            Boolean value = userPreferences.get(key.toString());
+            System.out.println(key);
+            System.out.println(value);
+        }
+    }
+    
+    public Boolean getAnswerByQuestion(String questionId, Question question, Scanner input) {
+        String userInput = getUserInput(input);
+        Boolean evaluation = question.getEvaluatedAnswer(userInput);
+        return evaluation;
     }
     
     public String getUserInput(Scanner input) {

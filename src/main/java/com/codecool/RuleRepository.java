@@ -22,14 +22,18 @@ public class RuleRepository {
         return questionIterator;
     }
     
+    public List<Question> getQuestions() {
+        return questions;
+    }
+    
     private class QuestionIterator implements Iterator {
-        int index = 0;
-        
+        int index;
+    
         @Override
         public boolean hasNext() {
             return index < questions.size();
         }
-        
+    
         @Override
         public Question next() {
             if (this.hasNext()) {

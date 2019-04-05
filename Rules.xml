@@ -4,10 +4,10 @@
         <Question>What meal would you like?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="breakfast, dinner, lunch"/>
+                <MultipleValue value="breakfast,dinner,lunch"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="cake, sweet, confectionary"/>
+                <MultipleValue value="cake,sweet,confectionary"/>
             </Selection>
         </Answer>
     </Rule>
@@ -15,10 +15,10 @@
         <Question>What style of food do you prefer?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="fast food, street food, junk food, fast, street"/>
+                <MultipleValue value="fast food, street food,junk food,fast,street"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="quality,fine dining, restaurant"/>
+                <MultipleValue value="quality,fine dining,restaurant"/>
             </Selection>
         </Answer>
     </Rule>

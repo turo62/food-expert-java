@@ -39,7 +39,6 @@ public class RuleParser extends XMLParser {
                 String id = r.getAttribute("id");
                 String myQuestion = r.getElementsByTagName("Question").item(0).getTextContent();
                 Answer myAnswer = new Answer();
-                //List<Value> answers = new ArrayList<>();
                 Value tempValue = null;
     
                 for (int j = 0; j < r.getElementsByTagName("Answer").getLength(); j++) {
@@ -90,9 +89,6 @@ public class RuleParser extends XMLParser {
                 }
                 Question question = new Question(id, myQuestion, myAnswer);
     
-                for (int o = 0; o < myAnswer.getAnswers().size(); o++) {
-                    System.out.println(myAnswer.getAnswers().get(o).getInputPattern());
-                }
                 ruleRepository.addQuestion(question);
             }
         }
