@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Facts>
-    <Fact id="zsíros">
+    <Fact id="fatty">
         <Description value="Jó csárda"/>
         <Evals>
-            <Eval id="mealtype">false</Eval>
+            <Eval id="mealtype">true</Eval>
             <Eval id="foodstyle">false</Eval>
             <Eval id="foodtype1">true</Eval>
             <Eval id="foodtype2">true</Eval>
             <Eval id="foodtype3">true</Eval>
+            <Eval id="price">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="light">
+        <Description value="Salátabár"/>
+        <Evals>
+            <Eval id="mealtype">true</Eval>
+            <Eval id="foodstyle">true</Eval>
+            <Eval id="foodtype1">true</Eval>
+            <Eval id="foodtype2">false</Eval>
+            <Eval id="foodtype3">false</Eval>
+            <Eval id="price">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="elegant">
+        <Description value="Hotel Degenfeld"/>
+        <Evals>
+            <Eval id="mealtype">true</Eval>
+            <Eval id="foodstyle">false</Eval>
+            <Eval id="foodtype1">false</Eval>
+            <Eval id="foodtype2">true</Eval>
+            <Eval id="foodtype3">false</Eval>
+            <Eval id="price">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="street">
+        <Description value="My kebab"/>
+        <Evals>
+            <Eval id="mealtype">true</Eval>
+            <Eval id="foodstyle">true</Eval>
+            <Eval id="foodtype1">false</Eval>
+            <Eval id="foodtype2">false</Eval>
+            <Eval id="foodtype3">true</Eval>
+            <Eval id="price">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="good">
+        <Description value="Anyukám mondta"/>
+        <Evals>
+            <Eval id="mealtype">true</Eval>
+            <Eval id="foodstyle">false</Eval>
+            <Eval id="foodtype1">true</Eval>
+            <Eval id="foodtype2">false</Eval>
+            <Eval id="foodtype3">false</Eval>
+            <Eval id="price">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="italian">
+        <Description value="Világbéke"/>
+        <Evals>
+            <Eval id="mealtype">true</Eval>
+            <Eval id="foodstyle">false</Eval>
+            <Eval id="foodtype1">true</Eval>
+            <Eval id="foodtype2">false</Eval>
+            <Eval id="foodtype3">false</Eval>
+            <Eval id="price">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="confectionary">
+        <Description value="Tiramisu"/>
+        <Evals>
+            <Eval id="mealtype">false</Eval>
+            <Eval id="foodstyle">false</Eval>
+            <Eval id="foodtype1">false</Eval>
+            <Eval id="foodtype2">false</Eval>
+            <Eval id="foodtype3">false</Eval>
             <Eval id="price">true</Eval>
         </Evals>
     </Fact>
