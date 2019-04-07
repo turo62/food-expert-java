@@ -25,7 +25,7 @@ public class FactRepository {
     private class Factiterator implements Iterator {
         private int index;
         public boolean hasNext() {
-            if (index < facts.size() - 1) {
+            if (index < facts.size()) {
                 index++;
                 return true;
             }
@@ -33,7 +33,7 @@ public class FactRepository {
         }
     
         public Fact next() {
-            return facts.get(index);
+            return facts.get(index++);
         }
     }
 }

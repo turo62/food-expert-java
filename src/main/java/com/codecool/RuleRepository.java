@@ -27,20 +27,16 @@ public class RuleRepository {
     }
     
     private class QuestionIterator implements Iterator {
-        int index;
-    
-        @Override
+        private int index;
         public boolean hasNext() {
-            return index < questions.size();
+            if (index < questions.size()) {
+                return true;
+            }
+            return false;
         }
     
-        @Override
         public Question next() {
-            if (this.hasNext()) {
-                return questions.get(index++);
-            } else {
-                return null;
-            }
+            return questions.get(index++);
         }
     }
 }
