@@ -1,9 +1,9 @@
-package com.codecool;
+package com.codecool.containers;
 
 import java.util.List;
 
 public class MultipleValue extends Value {
-    List<String> params;
+    private List<String> params;
     
     public MultipleValue(List<String> params, boolean selectionType) {
         this.inputPattern = params;

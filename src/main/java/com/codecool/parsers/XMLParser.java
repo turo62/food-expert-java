@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.parsers;
 
 import java.io.File;
 import java.io.FileInputStream;

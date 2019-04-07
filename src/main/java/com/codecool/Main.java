@@ -1,6 +1,8 @@
 package com.codecool;
 
-import java.util.List;
+import com.codecool.printing.Printing;
+import com.codecool.parsers.FactParser;
+import com.codecool.parsers.RuleParser;
 
 public class Main {
 

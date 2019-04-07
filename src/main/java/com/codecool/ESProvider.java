@@ -1,5 +1,9 @@
 package com.codecool;
 
+import com.codecool.containers.*;
+import com.codecool.parsers.FactParser;
+import com.codecool.parsers.RuleParser;
+import com.codecool.printing.Printing;
 import java.util.*;
 
 public class ESProvider {
@@ -31,7 +35,7 @@ public class ESProvider {
         input.close();
     }
     
-    public Boolean getAnswerByQuestion(String questionId, Question question, Scanner input) {
+    private Boolean getAnswerByQuestion(String questionId, Question question, Scanner input) {
         String userInput = getUserInput(input);
         Boolean evaluation = question.getEvaluatedAnswer(userInput);
         return evaluation;
@@ -68,11 +72,4 @@ public class ESProvider {
         }
         return true;
     }
-    
-    /*public void showResult() {
-        evaluate();
-        if (result.size() > 0) {
-        
-        }
-    }*/
 }

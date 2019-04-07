@@ -1,19 +1,9 @@
-package com.codecool;
+package com.codecool.parsers;
 
-import org.w3c.dom.Document;
+import com.codecool.containers.*;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +20,7 @@ public class RuleParser extends XMLParser {
         addRuleToRepository();
     }
     
-    public void addRuleToRepository() {
+    private void addRuleToRepository() {
         
         for (int i = 0; i < nL.getLength(); i++) {
             Node n = nL.item(i);

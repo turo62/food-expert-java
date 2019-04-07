@@ -1,6 +1,6 @@
-package com.codecool;
+package com.codecool.printing;
 
-import java.util.List;
+import com.codecool.containers.Question;
 
 public class Printing {
     

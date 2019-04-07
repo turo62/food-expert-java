@@ -1,9 +1,8 @@
-package com.codecool;
+package com.codecool.containers;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public class FactRepository {
     private List<Fact> facts;
@@ -26,7 +25,6 @@ public class FactRepository {
         private int index;
         public boolean hasNext() {
             if (index < facts.size()) {
-                index++;
                 return true;
             }
             return false;

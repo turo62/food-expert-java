@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.containers;
 
 public class Question {
     private String id;

@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.containers;
 
 import java.util.List;
 import java.util.ArrayList;
